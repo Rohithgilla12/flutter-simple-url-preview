@@ -54,6 +54,7 @@ class SimpleUrlPreview extends StatefulWidget {
   final double elevation;
 
   SimpleUrlPreview({
+    Key? key,
     required this.url,
     this.previewHeight = 130.0,
     this.isClosable,
@@ -67,12 +68,7 @@ class SimpleUrlPreview extends StatefulWidget {
     this.previewContainerPadding,
     this.onTap,
     this.elevation = 5.0,
-  })  : assert(previewHeight >= 130.0,
-            'The preview height should be greater than or equal to 130'),
-        assert(titleLines <= 2 && titleLines > 0,
-            'The title lines should be less than or equal to 2 and not equal to 0'),
-        assert(descriptionLines <= 3 && descriptionLines > 0,
-            'The description lines should be less than or equal to 3 and not equal to 0');
+  }) : super(key: key);
 
   @override
   _SimpleUrlPreviewState createState() => _SimpleUrlPreviewState();
